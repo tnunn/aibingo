@@ -1,44 +1,52 @@
 .bingo-modern {
-  max-width: 600px;
-  margin: 2rem auto;
-  padding: 2rem;
+  max-width: 350px;
+  margin: 0 auto;
+  padding: 0.4rem;
   background: linear-gradient(135deg, #1e293b 0%, #6366f1 100%);
-  border-radius: 2rem;
-  box-shadow: 0 8px 32px rgba(60, 60, 120, 0.25);
+  border-radius: 1rem;
+  box-shadow: 0 8px 32px rgba(60, 60, 120, 0.18);
   text-align: center;
   color: #fff;
   font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  overflow-x: hidden;
 }
 .bingo-title {
-  font-size: 2.8rem;
+  font-size: 1rem;
   font-weight: 800;
   letter-spacing: -2px;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
   background: linear-gradient(90deg, #f59e42, #6366f1);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-fill-color: transparent;
 }
 .bingo-desc {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
+  font-size: 0.7rem;
+  margin-bottom: 0.5rem;
   color: #e0e7ff;
 }
 .bingo-card-wrapper {
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  overflow-x: hidden;
 }
 .bingo-table {
   width: 100%;
+  max-width: 100%;
   border-collapse: separate;
-  border-spacing: 0.5rem;
+  border-spacing: 0.08rem;
+  table-layout: fixed;
 }
 .bingo-table td {
-  width: 90px;
-  height: 90px;
+  width: 13vw;
+  min-width: 38px;
+  max-width: 45px;
+  height: 13vw;
+  min-height: 38px;
+  max-height: 45px;
   background: rgba(255,255,255,0.08);
-  border-radius: 1rem;
-  font-size: 1rem;
+  border-radius: 0.4rem;
+  font-size: 0.5rem;
   font-weight: 600;
   color: #fff;
   cursor: pointer;
@@ -46,28 +54,31 @@
   box-shadow: 0 2px 8px rgba(60, 60, 120, 0.12);
   position: relative;
   vertical-align: middle;
+  padding: 0.06rem;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 .bingo-table td:hover {
   background: #6366f1;
-  transform: scale(1.07);
+  transform: scale(1.02);
 }
 .bingo-table td.marked {
   background: linear-gradient(135deg, #f59e42 0%, #6366f1 100%);
   color: #fff;
-  box-shadow: 0 0 16px #f59e42;
+  box-shadow: 0 0 6px #f59e42;
   animation: marked-flash 0.5s;
 }
 @keyframes marked-flash {
   0% { box-shadow: 0 0 0 #f59e42; }
-  50% { box-shadow: 0 0 24px #f59e42; }
-  100% { box-shadow: 0 0 16px #f59e42; }
+  50% { box-shadow: 0 0 10px #f59e42; }
+  100% { box-shadow: 0 0 6px #f59e42; }
 }
 .bingo-table td.bingo-row,
 .bingo-table td.bingo-col,
 .bingo-table td.bingo-diag {
   background: linear-gradient(90deg, #f59e42 0%, #6366f1 100%);
   color: #fff;
-  box-shadow: 0 0 24px #f59e42, 0 0 24px #6366f1;
+  box-shadow: 0 0 10px #f59e42, 0 0 10px #6366f1;
   animation: bingo-flash 1s alternate 4;
 }
 @keyframes bingo-flash {
@@ -77,25 +88,26 @@
 }
 .bingo-feature {
   display: block;
-  padding: 0.5rem;
-  font-size: 1rem;
+  padding: 0.06rem;
+  font-size: 0.5rem;
   font-weight: 600;
   text-shadow: 0 2px 8px #6366f1;
+  word-break: break-word;
 }
 .bingo-actions {
-  margin: 1.5rem 0 1rem 0;
+  margin: 0.5rem 0 0.5rem 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.15rem;
 }
 .bingo-btn {
   background: linear-gradient(90deg, #6366f1 0%, #f59e42 100%);
   color: #fff;
   border: none;
   border-radius: 2rem;
-  padding: 0.75rem 2rem;
-  font-size: 1.1rem;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.6rem;
   font-weight: 700;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(60, 60, 120, 0.18);
@@ -103,53 +115,19 @@
 }
 .bingo-btn:hover {
   background: linear-gradient(90deg, #f59e42 0%, #6366f1 100%);
-  transform: scale(1.08);
+  transform: scale(1.02);
 }
 .bingo-callout {
-  margin-top: 1rem;
-  font-size: 1.2rem;
+  margin-top: 0.1rem;
+  font-size: 0.6rem;
   color: #f59e42;
   font-weight: 700;
   letter-spacing: 1px;
 }
 .bingo-message {
-  font-size: 2rem;
+  font-size: 0.7rem;
   color: #f59e42;
   font-weight: 900;
-  margin-top: 1.5rem;
+  margin-top: 0.3rem;
   animation: bingo-flash 1s alternate 6;
-}
-@media (max-width: 700px) {
-  .bingo-modern {
-    padding: 0.5rem;
-    max-width: 100vw;
-    border-radius: 0.5rem;
-  }
-  .bingo-title {
-    font-size: 2rem;
-  }
-  .bingo-desc {
-    font-size: 1rem;
-  }
-  .bingo-table td {
-    width: 40px;
-    height: 40px;
-    font-size: 0.7rem;
-    padding: 0.2rem;
-  }
-  .bingo-feature {
-    font-size: 0.7rem;
-    padding: 0.2rem;
-  }
-  .bingo-actions {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  .bingo-btn {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-  }
-  .bingo-message {
-    font-size: 1.2rem;
-  }
 }
