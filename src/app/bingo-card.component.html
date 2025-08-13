@@ -1,0 +1,24 @@
+<div class="bingo-modern">
+  <h1 class="bingo-title">AI Bingo</h1>
+  <p class="bingo-desc">Mark off features as you see them demoed. Get a row, column, or diagonal for Bingo!</p>
+  <div class="bingo-card-wrapper">
+    <table class="bingo-table">
+      <tr *ngFor="let row of grid; let i = index">
+        <td *ngFor="let cell of row; let j = index"
+            [class.marked]="marked[i][j]"
+            [class.bingo-row]="isBingoRow(i)"
+            [class.bingo-col]="isBingoCol(j)"
+            [class.bingo-diag]="isBingoDiag(i, j)"
+            (click)="toggleMark(i, j)">
+          <span class="bingo-feature">{{ cell }}</span>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="bingo-actions">
+    <button class="bingo-btn" (click)="generateCard()">🔄 New Card</button>
+    <button class="bingo-btn" (click)="callout = calloutFeature()">🎲 Callout Feature</button>
+  </div>
+  <div *ngIf="callout" class="bingo-callout">Callout: <strong>{{ callout }}</strong></div>
+  <div *ngIf="bingo" class="bingo-message">🎉 Bingo! 🎉</div>
+</div>

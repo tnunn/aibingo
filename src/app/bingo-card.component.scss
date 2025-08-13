@@ -1,0 +1,129 @@
+.bingo-modern {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, #1e293b 0%, #6366f1 100%);
+  border-radius: 2rem;
+  box-shadow: 0 8px 32px rgba(60, 60, 120, 0.25);
+  text-align: center;
+  color: #fff;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+.bingo-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  letter-spacing: -2px;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(90deg, #f59e42, #6366f1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.bingo-desc {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #e0e7ff;
+}
+.bingo-card-wrapper {
+  margin-bottom: 1.5rem;
+}
+.bingo-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0.5rem;
+}
+.bingo-table td {
+  width: 90px;
+  height: 90px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(60, 60, 120, 0.12);
+  position: relative;
+  vertical-align: middle;
+}
+.bingo-table td:hover {
+  background: #6366f1;
+  transform: scale(1.07);
+}
+.bingo-table td.marked {
+  background: linear-gradient(135deg, #f59e42 0%, #6366f1 100%);
+  color: #fff;
+  box-shadow: 0 0 16px #f59e42;
+  animation: marked-flash 0.5s;
+}
+@keyframes marked-flash {
+  0% { box-shadow: 0 0 0 #f59e42; }
+  50% { box-shadow: 0 0 24px #f59e42; }
+  100% { box-shadow: 0 0 16px #f59e42; }
+}
+.bingo-table td.bingo-row,
+.bingo-table td.bingo-col,
+.bingo-table td.bingo-diag {
+  background: linear-gradient(90deg, #f59e42 0%, #6366f1 100%);
+  color: #fff;
+  box-shadow: 0 0 24px #f59e42, 0 0 24px #6366f1;
+  animation: bingo-flash 1s alternate 4;
+}
+@keyframes bingo-flash {
+  0% { background: #f59e42; }
+  50% { background: #6366f1; }
+  100% { background: #f59e42; }
+}
+.bingo-feature {
+  display: block;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-shadow: 0 2px 8px #6366f1;
+}
+.bingo-actions {
+  margin: 1.5rem 0 1rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.bingo-btn {
+  background: linear-gradient(90deg, #6366f1 0%, #f59e42 100%);
+  color: #fff;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(60, 60, 120, 0.18);
+  transition: background 0.2s, transform 0.2s;
+}
+.bingo-btn:hover {
+  background: linear-gradient(90deg, #f59e42 0%, #6366f1 100%);
+  transform: scale(1.08);
+}
+.bingo-callout {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #f59e42;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.bingo-message {
+  font-size: 2rem;
+  color: #f59e42;
+  font-weight: 900;
+  margin-top: 1.5rem;
+  animation: bingo-flash 1s alternate 6;
+}
+@media (max-width: 700px) {
+  .bingo-modern {
+    padding: 1rem;
+    max-width: 98vw;
+  }
+  .bingo-table td {
+    width: 50px;
+    height: 50px;
+    font-size: 0.8rem;
+  }
+}
